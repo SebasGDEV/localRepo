@@ -54,9 +54,10 @@ export function getCacheSizes() {
  * Clears SGP caches to free up memory for long-running apps.
  */
 export function clearCache() {
-	caches.forEach(cache => {
-		caches[cache] = {};
-	});
+	cachedSatelliteInfo = {};
+	cachedAntemeridianCrossings = {};
+	cachedOrbitTracks = {};
+	cachedGroundTrack = {};
 }
 
 /**

@@ -59,6 +59,7 @@ export function clearCache() {
 	cachedOrbitTracks = [];
 	cachedGroundTrack = [];
   cachedVal = [];
+  cachedCrossingTimes = [];
 }
 
 /**

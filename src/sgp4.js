@@ -58,7 +58,6 @@ export function clearCache() {
 	cachedAntemeridianCrossings = [];
 	cachedOrbitTracks = [];
 	cachedGroundTrack = [];
-  cachedCrossingTimes = [];
 }
 
 /**

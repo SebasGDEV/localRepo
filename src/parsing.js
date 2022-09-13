@@ -76,10 +76,6 @@ export function parseTLE(sourceTLE, fastParse = true) {
 	// Note: only strings and arrays will make it past this point.
 
 	// Check if the TLE exists in the cache.
-	const cacheKey = getTLECacheKey(type, sourceTLE);
-	if (tleCache[cacheKey]) {
-		return tleCache[cacheKey];
-	}
 
 	if (!acceptedTLETypes.includes(type)) {
 		throw new Error(_ERRORS._TYPE("Source TLE", acceptedTLETypes, type));
@@ -117,8 +113,6 @@ export function parseTLE(sourceTLE, fastParse = true) {
 		}
 	}
 
-	// Update cache.
-	tleCache[cacheKey] = output;
 
 	return output;
 }

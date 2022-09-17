@@ -1,7 +1,5 @@
 # tle.js
 
-## THIS COPY OF A REPO IS JUST TO TEST NPM FUNCTIONALITY
-
 [![npm downloads](https://img.shields.io/npm/dm/tle.js.svg)](https://www.npmjs.com/package/tle.js)
 
 Satellite TLE tools in JavaScript

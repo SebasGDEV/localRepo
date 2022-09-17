@@ -54,10 +54,12 @@ export function getCacheSizes() {
  * Clears SGP caches to free up memory for long-running apps.
  */
 export function clearCache() {
+	caches.forEach((_cache, idx) => {
 	cachedSatelliteInfo = [];
 	cachedAntemeridianCrossings = [];
 	cachedOrbitTracks = [];
 	cachedGroundTrack = [];
+	});
 }
 
 /**
@@ -123,6 +125,7 @@ export function getSatelliteInfo(
 	const obsLng = observerLng || defaultObserverPosition.lng;
 	const obsHeight = observerHeight || defaultObserverPosition.height;
 
+
 	// Initialize a satellite record
 	const satrec = twoline2satrec(tle[0], tle[1]);
 	if (satrec.error) {
@@ -178,6 +181,7 @@ export function getSatelliteInfo(
 		height,
 		velocity: velocityKmS
 	};
+
 	return output;
 }
 

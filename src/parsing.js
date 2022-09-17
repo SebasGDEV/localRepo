@@ -10,7 +10,6 @@ const _ERRORS = {
 export function isTLEObj(obj) {
 	return (
 		typeof obj === _DATA_TYPES._OBJECT &&
-		obj.name &&
 		obj.tle &&
 		getType(obj.tle) === _DATA_TYPES._ARRAY &&
 		obj.tle.length === 2
@@ -75,8 +74,6 @@ export function parseTLE(sourceTLE, fastParse = true) {
 
 	// Note: only strings and arrays will make it past this point.
 
-	// Check if the TLE exists in the cache.
-
 	if (!acceptedTLETypes.includes(type)) {
 		throw new Error(_ERRORS._TYPE("Source TLE", acceptedTLETypes, type));
 	}
@@ -112,8 +109,6 @@ export function parseTLE(sourceTLE, fastParse = true) {
 			output.error = "TLE parse error: bad TLE";
 		}
 	}
-
-
 	return output;
 }
 
